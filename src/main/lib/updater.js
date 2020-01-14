@@ -20,12 +20,12 @@ autoUpdater.on('update-available', ({ version, releaseNotes }) => {
     return;
   }
   __updateWin = windowManager.buildWindowOfType('update', win => {
-    win.webContents.send('update-available', {
+    /*win.webContents.send('update-available', {
       version,
       releaseNotes,
       currentVersion: app.getVersion(),
       canUpdateAutomatically: !isLinux()
-    });
+    });*/
   });
   __updateWin.on('close', () => {
     __updateWin = null;
@@ -33,27 +33,27 @@ autoUpdater.on('update-available', ({ version, releaseNotes }) => {
 });
 
 autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall();
+  //autoUpdater.quitAndInstall();
 });
 
 autoUpdater.on('download-progress', progress => {
   if (__updateWin) {
-    __updateWin.webContents.send('download-progress', progress);
+    //__updateWin.webContents.send('download-progress', progress);
   }
 });
 
 autoUpdater.on('error', error => {
   if (__updateWin) {
-    __updateWin.webContents.send('update-error', error);
+    //__updateWin.webContents.send('update-error', error);
   }
 });
 
 ipcMain.on('download-update', () => {
-  autoUpdater.downloadUpdate();
+  //autoUpdater.downloadUpdate();
 });
 
 export function checkForUpdates() {
-  if (process.env.NODE_ENV === 'production') {
+  /*if (process.env.NODE_ENV === 'production') {
     autoUpdater.checkForUpdates();
-  }
+  }*/
 }
