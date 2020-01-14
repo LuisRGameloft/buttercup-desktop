@@ -52,7 +52,7 @@ export const setupMenu = store => {
             reopenMainWindow(win => openFile(win));
           }
         },
-        {
+        /*{
           label: label('archive.connect-cloud-sources'),
           accelerator: 'CmdOrCtrl+Shift+C',
           click: () => {
@@ -62,7 +62,7 @@ export const setupMenu = store => {
               });
             });
           }
-        },
+        },*/
         {
           type: 'separator'
         },
@@ -154,8 +154,8 @@ export const setupMenu = store => {
           label: label('archive.close')
         }
       ]
-    },
-    {
+    }
+    /*{
       label: label('edit.edit'),
       submenu: [
         {
@@ -346,7 +346,7 @@ export const setupMenu = store => {
           }
         }
       ]
-    }
+    }*/
   ];
 
   if (isOSX()) {
@@ -395,7 +395,7 @@ export const setupMenu = store => {
 
   // About and Check for Updates...
   // App menu on macOS and Help menu on others
-  defaultTemplate[isOSX() ? 0 : 4].submenu.unshift(
+  /*defaultTemplate[isOSX() ? 0 : 4].submenu.unshift(
     { role: 'about', label: label('app.about') },
     {
       label: label('app.check-for-updates'),
@@ -404,7 +404,7 @@ export const setupMenu = store => {
       }
     },
     { type: 'separator' }
-  );
+  );*/
 
   const buildTemplate = Menu.buildFromTemplate(defaultTemplate);
   Menu.setApplicationMenu(buildTemplate);

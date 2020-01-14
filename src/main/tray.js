@@ -34,8 +34,8 @@ export const setupTrayIcon = store => {
     const trayPath = isWindows()
       ? 'resources/icons/tray.ico'
       : isLinux()
-        ? 'resources/icons/tray-linux.png'
-        : 'resources/icons/trayTemplate.png';
+      ? 'resources/icons/tray-linux.png'
+      : 'resources/icons/trayTemplate.png';
 
     tray = new Tray(getPathToFile(trayPath));
   }
@@ -50,7 +50,7 @@ export const setupTrayIcon = store => {
     {
       type: 'separator'
     },
-    { role: 'about', label: label('app.about') },
+    /*{ role: 'about', label: label('app.about') },
     {
       label: label('app.check-for-updates'),
       click: () => {
@@ -59,7 +59,7 @@ export const setupTrayIcon = store => {
     },
     {
       type: 'separator'
-    },
+    },*/
     {
       label: label('archive.new'),
       click: () => {
@@ -72,7 +72,7 @@ export const setupTrayIcon = store => {
         reopenMainWindow(win => openFile(win));
       }
     },
-    {
+    /*{
       label: label('archive.connect-cloud-sources'),
       click: () => {
         reopenMainWindow(win => {
@@ -81,7 +81,7 @@ export const setupTrayIcon = store => {
           });
         });
       }
-    },
+    },*/
     {
       type: 'separator'
     },
