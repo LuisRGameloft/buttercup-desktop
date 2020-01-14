@@ -24,6 +24,7 @@ module.exports = merge(baseConfig, {
     contentBase: baseConfig.output.path,
     publicPath: '/app',
     port: 3000,
+    disableHostCheck: true,
     stats: 'normal'
   },
 
